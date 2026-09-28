@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdoptCat - CatLover</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: #0d0d11;
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 1.5rem 1rem 3rem 1rem;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Top Bar Logo */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: #e0e7ff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .logo-text {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #a5b4fc;
+        }
+
+        /* Title Banner */
+        .title-banner {
+            margin-bottom: 1.8rem;
+        }
+
+        .title-banner h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        /* Grid Layout (2 Kolom Mobile) */
+        .cat-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        /* Card Container */
+        .card {
+            background-color: #18181f;
+            border-radius: 20px;
+            padding: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border: 1px solid #262633;
+        }
+
+        /* Container Foto Kucing */
+        .card-img-wrap {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 14px;
+            overflow: hidden;
+            background-color: #2a2a36;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Text Details */
+        .card-name {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+            min-height: 2.4em;
+        }
+
+        .card-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .card-price {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #22c55e;
+        }
+
+        /* Plus Button Purple */
+        .btn-add {
+            width: 32px;
+            height: 32px;
+            background: #a855f7;
+            color: #ffffff;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: transform 0.1s ease;
+        }
+
+        .btn-add:active {
+            transform: scale(0.92);
+        }
+
+        /* Responsive View (Desktop 4 Kolom) */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 900px;
+            }
+            .cat-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logo Header -->
+        <div class="header">
+            <div class="logo-icon">🐾</div>
+            <div class="logo-text">AdoptCat</div>
+        </div>
+
+        <!-- Judul Utama -->
+        <div class="title-banner">
+            <h1>Temukan Kucingmu<br>Hari Ini 🐾🐾</h1>
+        </div>
+
+        <!-- Grid 30 List Kucing -->
+        <div class="cat-grid">
+
+            <!-- 1 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-af910d1b-14e1-4d7c-97c5-a7daba9b7a64.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Duda Ireng Khas Jawa</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp250.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-ff6560a0-157a-45ae-90dc-c9b2ab3a7a84.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Sigma Pontianak</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp350.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 3 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-29fdac99-0c86-411d-b762-85e96f68ac9d.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Ngabers Depok</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp150.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 4 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-5250f8b8-7f8b-4aee-b72b-4ccbe4c26ec1.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Kicau Mania Palembang</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp450.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-9e86148f-f75c-41bc-81b3-faba2ac4c970.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Jamet Bekas asbak bali</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp120.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-98524c90-3bec-4243-99bd-a21d328385cf.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing pak rt</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp500.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 7 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-08ca23ca-80f9-442b-9ae6-30026b5d8684.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Mokondo</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp99.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 8 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-72f01ca6-31b7-4c2d-a745-9cf4714030a5.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Introvert Pemalu</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp200.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 9 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-8e8a2ea8-4e40-44e1-8ddb-8a51818734ba.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Lord Sunda Empire</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp999.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 10 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-bece3661-5032-417d-a66a-cdb60092cc74.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Overthinking Jam 2 Malam</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp180.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 11 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-4b72c762-f65a-4ba9-8e44-c7ddb4ce4b78.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing bikini batom</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp300.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 12 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-915c1562-24bf-4e19-9def-61fb03f7234f.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Kang stalking janda komplek</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp50.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 13 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-a7b41cdc-da8f-4d66-baaf-afc595dbe6ea.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing ikan duyung </div>
+                <div class="card-footer">
+                    <span class="card-price">Rp666.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 14 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-d44ba329-93fe-4605-82db-7cb4345f10f2.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Muka garang</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp110.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 15 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-7ff38346-d355-49c0-9d91-9104fcd6af38.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Sadboy Karawang</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp175.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 16 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-02d7286c-bc70-45fb-8adf-bac5022f73d0.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Capung khas betawi</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp400.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 17 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-254c3c24-151d-4e78-bef0-7fa42b6f8228.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing jalan jongkok</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp130.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 18 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-ac70e4a3-d077-4ddf-922b-9ceff1be05bf.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Gosip Khas tetangga</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp310.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 19 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-c96dd8cd-fd8d-489d-9adc-b89ccfca3b1d.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Hush urar hush</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp210.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 20 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-e539a344-f033-4e2f-96ac-817b79b4fb6a.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Sepuh Luar Angkasa</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp888.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 21 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-8439969d-1856-4ecc-9c71-9394a11f857a.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Ambatukam</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp45.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 22 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-22d6a55a-4f6e-4169-9dba-f73cb66c2f6c.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Korban JustFriend</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp125.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 23 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-5ed91111-0246-4c12-8fcc-45ca40754be4.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Bapak dari segala kucing</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp750.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 24 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-b6e12808-61e1-4cd0-a249-8b386666a3f2.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Nyengir khas betawi</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp160.000.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 25 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-015c3571-b3f4-4daa-8381-c48cb68935a5.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Paruh panjang</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp220.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 26 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-7d7968de-2ea1-4c33-beff-838c30ed5cb8.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Kehilangan arah khas sumatra</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp80.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 27 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-148f29d2-7373-4c0a-ba43-1e880d1b23ab.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Jagoan Komplek Sebelah</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp380.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 28 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-48ed3f41-3776-4710-b72d-c2cdb19c5735.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Pickmi khas jepang</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp420.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 29 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-98e16988-b1a5-4d13-aed0-807ec6f7313d.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Sigma Boy</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp 999.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+            <!-- 30 -->
+            <div class="card">
+                <div class="card-img-wrap">
+                    <img src="https://cdn.phototourl.com/member/2026-09-28-f5c0e18d-3500-4536-8b5a-c113ebb14c46.webp?w=400&q=80" alt="Foto">
+                </div>
+                <div class="card-name">Kucing Penunggu Bawah Kasur</div>
+                <div class="card-footer">
+                    <span class="card-price">Rp899.000.000</span>
+                    <button class="btn-add">+</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
